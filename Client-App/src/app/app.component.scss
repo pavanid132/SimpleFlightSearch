@@ -1,0 +1,50 @@
+.f_c {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgrey;
+    height: 50vh;
+    &_group {
+        width: 50%;
+        margin: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &_label{
+         width: 40%;
+        }
+        &_input{
+         width: 60%;
+        }
+    }
+}
+.alert {
+    color: red;
+    padding: 10px;
+}
+.f_r{
+    height: 50vh;
+    background-color: lightgrey;
+}
+#f_search {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #f_search td, #f_search th {
+    border: 1px solid #ddd;
+    padding: 3px;
+  }
+  
+  #f_search tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #f_search tr:hover {background-color: #ddd;}
+  
+  #f_search th {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    text-align: left;
+    background-color: grey;
+    color: white;
+  }

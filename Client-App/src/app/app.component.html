@@ -1,0 +1,64 @@
+<form [formGroup]="flightForm">
+  <div class="f_c">
+    <div class="f_c_group alert" *ngIf="error">{{error}}</div>
+    <div class="f_c_group">
+      <label for="flight" class="f_c_group_label">Flight</label>
+      <select class="f_c_group_input" id="flight" formControlName="flightNumber">
+        <option disabled selected value=null>Blank</option>
+        <option *ngFor="let flight of flightNumbers">{{flight}}</option>
+      </select>
+    </div>
+    <div class="f_c_group">
+      <label for="origins" class="f_c_group_label">Origin</label>
+      <select class="f_c_group_input" id="origin" formControlName="origin">
+        <option disabled selected value=null>Blank</option>
+        <option *ngFor="let origin of origins">{{origin}}</option>
+      </select>
+    </div>
+    <div class="f_c_group">
+      <label for="destinations" class="f_c_group_label">Destination</label>
+      <select class="f_c_group_input" id="destinations" formControlName="destination">
+        <option disabled selected value=null>Blank</option>
+        <option *ngFor="let destination of destinations">{{destination}}</option>
+      </select>
+    </div>
+    <div class="f_c_group">
+      <label for="departure" class="f_c_group_label">Select Departure</label>
+      <input type="date" id="departure" class="f_c_group_input" formControlName="date">
+    </div>
+    <div class="f_c_group">
+      <button (click)="Clear()">Clear</button>
+      <button (click)="Submit()">Submit</button>
+    </div>
+  </div>
+  <div class="f_r">
+    <table *ngIf="flightResults" id="f_search">
+      <thead>
+        <th>Flight Number</th>
+        <th>Carrier</th>
+        <th>origin</th>
+        <th>departure</th>
+        <th>destination</th>
+        <th>arrival</th>
+        <th>aircraft</th>
+        <th>distance</th>
+        <th>travelTime</th>
+        <th>status</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let res of flightResults">
+          <td>{{res.flightNumber}}</td>
+          <td>{{res.carrier}}</td>
+          <td>{{res.origin}}</td>
+          <td>{{res.departure}}</td>
+          <td>{{res.destination}}</td>
+          <td>{{res.arrival}}</td>
+          <td>{{res.aircraft}}</td>
+          <td>{{res.distance}}</td>
+          <td>{{res.travelTime}}</td>
+          <td>{{res.status}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</form>
